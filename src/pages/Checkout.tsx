@@ -3,10 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -16,8 +15,6 @@ import {
     Truck,
     MapPin,
     User,
-    Mail,
-    Phone,
     CheckCircle,
     Shield,
     Download,
@@ -27,10 +24,8 @@ import {
     Calendar,
     Package,
     Clock,
-    ChevronRight,
-    ChevronLeft
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import type { CustomerInfo, Order, OrderItem, PaymentMethod } from "@/types";
 
 interface CartItem {
@@ -56,20 +51,14 @@ const staggerChildren = {
     visible: { transition: { staggerChildren: 0.1 } }
 };
 
-const slideIn = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-};
+
 
 const slideInRight = {
     hidden: { opacity: 0, x: 20 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
 };
 
-const scaleIn = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } }
-};
+
 
 export default function Checkout() {
     const navigate = useNavigate();

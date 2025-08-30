@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from './ui/button';
-import { Badge, Heart, Home, Info, Menu, MessageCircle, Package, Search, ShoppingBag, User, X } from 'lucide-react';
+import { Heart, Home, Info, Menu, MessageCircle, Package, ShoppingBag, User, X } from 'lucide-react';
 
 interface CartItem {
     id: string;

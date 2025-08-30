@@ -1,8 +1,7 @@
-import { AddProductModal } from "@/components/AddProductModal";
 import { Button } from "@/components/ui/button";
 import { productData } from "@/entities/Product";
 import ResetAllModal from "@/model/ResetAllModal";
-import type { Product, User } from "@/types";
+import type { User } from "@/types";
 import { createPageUrl } from "@/utils";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -454,7 +453,7 @@ const UserProfile: React.FC = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
-                                        {orderData?.map((order: any, index: any) => (
+                                        {orderData?.map((order: any) => (
                                             <tr key={order} className="hover:bg-gray-50">
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                     {order.order_number}

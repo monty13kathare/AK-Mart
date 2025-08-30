@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Truck, Shield, Zap, Sparkles, ChevronRight, ChevronLeft, Star } from "lucide-react";
+import { ArrowRight, Truck, Shield, Zap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { createPageUrl } from "@/utils";
 import { productData } from "@/entities/Product";
@@ -11,9 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Home() {
     const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [activeCategory, setActiveCategory] = useState(0);
     const [visibleBrands, setVisibleBrands] = useState(0);
-    const brandsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         loadFeaturedProducts();

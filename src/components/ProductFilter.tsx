@@ -5,7 +5,6 @@ import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { X, Filter } from "lucide-react";
-import React from "react";
 
 interface Product {
     id: string | number;

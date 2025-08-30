@@ -1,8 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Award, Users, Globe, Heart, Mail, Phone, MessageCircle, ChevronDown, Sparkles } from "lucide-react";
+import { Award, Users, Globe, Heart, ChevronDown, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import dp from "../images/dp.png"
 
 export default function About() {

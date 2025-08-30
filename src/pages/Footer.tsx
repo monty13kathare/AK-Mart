@@ -1,5 +1,5 @@
 import { createPageUrl } from "@/utils";
-import { ShoppingBag, Facebook, Twitter, Instagram, Linkedin, ArrowUp, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { ShoppingBag, Facebook, Instagram, Linkedin, ArrowUp, Mail, Phone, MapPin, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 

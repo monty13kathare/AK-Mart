@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ArrowRight, Star, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -21,7 +21,7 @@ interface HeroProps {
 const bannerImages = [
     "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
     "https://images.unsplash.com/photo-1566206091558-7f218b696731?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1700&q=80",
-    "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+    "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
 ];
 
 export default function Hero({ featuredProducts }: HeroProps) {
@@ -44,22 +44,6 @@ export default function Hero({ featuredProducts }: HeroProps) {
         return () => clearInterval(interval);
     }, [featuredProducts.length]);
 
-    // const nextBanner = () => {
-    //     setCurrentBannerIndex((prev) => (prev + 1) % bannerImages.length);
-    // };
-
-    // const prevBanner = () => {
-    //     setCurrentBannerIndex((prev) => (prev - 1 + bannerImages.length) % bannerImages.length);
-    // };
-
-    // const nextProduct = () => {
-    //     setCurrentProductIndex((prev) => (prev + 1) % featuredProducts.length);
-    // };
-
-    // const prevProduct = () => {
-    //     setCurrentProductIndex((prev) => (prev - 1 + featuredProducts.length) % featuredProducts.length);
-    // };
-
     return (
         <section className="relative h-screen max-h-[800px] flex items-center overflow-hidden">
             {/* Banner Image Slider */}
@@ -72,7 +56,9 @@ export default function Hero({ featuredProducts }: HeroProps) {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1 }}
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url(${bannerImages[currentBannerIndex]})` }}
+                        style={{
+                            backgroundImage: `url(${bannerImages[currentBannerIndex]})`,
+                        }}
                     />
                 </AnimatePresence>
 
@@ -84,33 +70,17 @@ export default function Hero({ featuredProducts }: HeroProps) {
                     {bannerImages.map((_, index) => (
                         <button
                             key={index}
-                            className={`w-3 h-3 rounded-full ${currentBannerIndex === index ? 'bg-amber-500' : 'bg-white/50'}`}
+                            className={`w-3 h-3 rounded-full ${currentBannerIndex === index ? "bg-amber-500" : "bg-white/50"
+                                }`}
                             onClick={() => setCurrentBannerIndex(index)}
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
                 </div>
-
-                {/* Banner arrows */}
-                {/* <button
-                    onClick={prevBanner}
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition-all"
-                    aria-label="Previous slide"
-                >
-                    <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                    onClick={nextBanner}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition-all"
-                    aria-label="Next slide"
-                >
-                    <ChevronRight className="w-6 h-6" />
-                </button> */}
             </div>
 
             {/* Content Container */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between gap-10">
-
                 {/* Left Text Content */}
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
@@ -124,11 +94,13 @@ export default function Hero({ featuredProducts }: HeroProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                            Redefine Your <span className="text-amber-400">Style Identity</span>
+                            Redefine Your{" "}
+                            <span className="text-amber-400">Style Identity</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-200 mt-4">
-                            Discover exclusive collections that blend timeless elegance with contemporary trends.
-                            Curated by fashion experts to help you express your unique personality.
+                            Discover exclusive collections that blend timeless elegance with
+                            contemporary trends. Curated by fashion experts to help you
+                            express your unique personality.
                         </p>
                     </motion.div>
 
@@ -139,7 +111,10 @@ export default function Hero({ featuredProducts }: HeroProps) {
                         className="flex flex-col sm:flex-row gap-4 mt-8"
                     >
                         <Link to="/products">
-                            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 flex items-center gap-2 group">
+                            <Button
+                                size="lg"
+                                className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 flex items-center gap-2 group"
+                            >
                                 Explore Collection
                                 <motion.div
                                     animate={{ x: [0, 5, 0] }}
@@ -214,12 +189,16 @@ export default function Hero({ featuredProducts }: HeroProps) {
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="font-bold text-xl mb-2">{featuredProducts[currentProductIndex].name}</h3>
+                                        <h3 className="font-bold text-xl mb-2">
+                                            {featuredProducts[currentProductIndex].name}
+                                        </h3>
                                         <p className="text-slate-600 text-sm mb-3 line-clamp-2">
                                             {featuredProducts[currentProductIndex].description}
                                         </p>
                                         <div className="flex items-center justify-between">
-                                            <p className="text-amber-600 font-bold text-xl">${featuredProducts[currentProductIndex].price}</p>
+                                            <p className="text-amber-600 font-bold text-xl">
+                                                ${featuredProducts[currentProductIndex].price}
+                                            </p>
                                             <div className="flex items-center text-yellow-400">
                                                 <Star className="w-5 h-5 fill-current mr-1" />
                                                 {featuredProducts[currentProductIndex].rating}
@@ -233,22 +212,6 @@ export default function Hero({ featuredProducts }: HeroProps) {
                             )}
                         </motion.div>
                     </AnimatePresence>
-
-                    {/* Product navigation */}
-                    {/* <button
-                        onClick={prevProduct}
-                        className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white text-slate-900 p-2 rounded-full shadow-lg hover:bg-amber-50 transition-all"
-                        aria-label="Previous product"
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                        onClick={nextProduct}
-                        className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-white text-slate-900 p-2 rounded-full shadow-lg hover:bg-amber-50 transition-all"
-                        aria-label="Next product"
-                    >
-                        <ChevronRight className="w-5 h-5" />
-                    </button> */}
                 </motion.div>
             </div>
 
@@ -262,7 +225,7 @@ export default function Hero({ featuredProducts }: HeroProps) {
                 transition={{
                     duration: 15,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                 }}
             />
             <motion.div
@@ -274,7 +237,7 @@ export default function Hero({ featuredProducts }: HeroProps) {
                 transition={{
                     duration: 20,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                 }}
             />
         </section>

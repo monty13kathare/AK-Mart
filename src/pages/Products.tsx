@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Filter, Grid, List, Package } from "lucide-react";
+import { Filter, Package } from "lucide-react";
 import ProductCard from "../components/ProductCard";
 import { productData } from "@/entities/Product";
 import ProductFilter from "@/components/ProductFilter";
@@ -24,7 +24,6 @@ export interface Product {
 type SortOption = "name" | "price_low" | "price_high" | "rating" | "newest";
 
 // View mode type
-type ViewMode = "grid" | "list";
 
 export default function Products() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -32,7 +31,6 @@ export default function Products() {
     const [isLoading, setIsLoading] = useState(true);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [sortBy, setSortBy] = useState<SortOption>("name");
-    const [viewMode, setViewMode] = useState<ViewMode>("grid");
     const product2 = JSON.parse(localStorage.getItem('products') || '[]');
     const [filters, setFilters] = useState<any>({
         search: "",
@@ -211,25 +209,7 @@ export default function Products() {
                             <option value="newest">Newest First</option>
                         </select>
 
-                        {/* View Mode */}
-                        {/* <div className="hidden sm:flex border border-slate-200 rounded-lg">
-                            <Button
-                                variant={viewMode === "grid" ? "default" : "ghost"}
-                                size="icon"
-                                onClick={() => setViewMode("grid")}
-                                className="rounded-r-none"
-                            >
-                                <Grid className="w-4 h-4" />
-                            </Button>
-                            <Button
-                                variant={viewMode === "list" ? "default" : "ghost"}
-                                size="icon"
-                                onClick={() => setViewMode("list")}
-                                className="rounded-l-none"
-                            >
-                                <List className="w-4 h-4" />
-                            </Button>
-                        </div> */}
+
 
                         {/* Mobile Filter Toggle */}
                         <Button
@@ -282,10 +262,7 @@ export default function Products() {
                             </div>
                         ) : (
                             <div
-                                className={`grid gap-6 ${viewMode === "grid"
-                                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                                    : "grid-cols-1"
-                                    }`}
+                                className={`grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`}
                             >
                                 {filteredProducts.map((product) => (
                                     <ProductCard key={product.id} product={product} />

@@ -10,7 +10,6 @@ import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import ManageProducts from "./pages/ManageProducts";
 import UserProfile from "./pages/UserProfile";
-import OrderSuccess from "./pages/OrderSuccess";
 import LikeAndWishlist from "./pages/LikeAndWishlist";
 import OrderHistory from "./pages/OrderHistory";
 
@@ -27,10 +26,8 @@ const router = createBrowserRouter([
       { path: "cart", element: <Cart /> },
       { path: "checkout", element: <Checkout /> },
       { path: "userProfile", element: <UserProfile /> },
-
       { path: "manageProducts", element: <ManageProducts /> },
       { path: `productDetail/:id`, element: <ProductDetail /> },
-      { path: "orderSuccess", element: <OrderSuccess /> },
       { path: "likes", element: <LikeAndWishlist /> },
       { path: "orderHistory", element: <OrderHistory /> },
 
