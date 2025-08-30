@@ -35,7 +35,7 @@ interface CartItem {
     quantity: number;
     size?: string;
     color?: string;
-    image?: string;
+    images?: string;
     category?: string;
     brand?: string;
     stockStatus?: "in-stock" | "low-stock" | "out-of-stock";
@@ -217,7 +217,7 @@ export default function Checkout() {
                 price: item.price,
                 quantity: item.quantity,
                 size: item.size,
-                product_image: item.image,
+                product_image: item.images,
                 color: item.color,
             }));
 
@@ -406,7 +406,7 @@ export default function Checkout() {
                                             <div className="flex items-center gap-4">
                                                 <div className="w-16 h-16 rounded-md overflow-hidden bg-slate-100">
                                                     <img
-                                                        src={cartItems.find(ci => ci.id === item.product_id)?.image || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=100&q=80"}
+                                                        src={cartItems.find(ci => ci.id === item.product_id)?.images || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=100&q=80"}
                                                         alt={item.product_name}
                                                         className="w-full h-full object-cover"
                                                     />
@@ -797,7 +797,7 @@ export default function Checkout() {
                                                 <div className="w-16 h-16 rounded-lg overflow-hidden bg-white shadow-sm flex-shrink-0">
                                                     <img
                                                         src={
-                                                            item.image ||
+                                                            item.images ||
                                                             "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=100&q=80"
                                                         }
                                                         alt={item.name}

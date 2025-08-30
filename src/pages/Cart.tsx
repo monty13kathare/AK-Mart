@@ -11,7 +11,7 @@ interface CartItem {
     name: string;
     price: number;
     quantity: number;
-    image?: string;
+    images?: string;
     size?: string;
     color?: string;
 }
@@ -112,7 +112,7 @@ export default function Cart() {
                                         <div className="w-full sm:w-32 aspect-square rounded-lg overflow-hidden bg-slate-100">
                                             <img
                                                 src={
-                                                    item.image ||
+                                                    item.images ||
                                                     "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&q=80"
                                                 }
                                                 alt={item.name}
