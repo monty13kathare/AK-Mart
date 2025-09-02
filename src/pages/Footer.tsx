@@ -254,7 +254,7 @@ export default function Footer() {
                             </div>
                             <div className="flex items-start text-slate-300 text-sm">
                                 <MapPin className="w-4 h-4 mr-2 mt-0.5 text-amber-500 flex-shrink-0" />
-                                <span>Gondwara , Raipur Chhattisgarh, India, IN 493221</span>
+                                <span> Raipur Chhattisgarh, India, IN 493221</span>
                             </div>
                         </div>
                     </div>

@@ -58,7 +58,7 @@ export default function Contact() {
         {
             icon: MapPin,
             title: "Address",
-            info: "Gondwara , Raipur Chhattisgarh, India, IN 493221",
+            info: "Raipur Chhattisgarh, India, IN 493221",
             color: "from-blue-500 to-cyan-400",
         },
         {

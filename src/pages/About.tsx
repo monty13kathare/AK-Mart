@@ -358,7 +358,7 @@ export default function About() {
                                             </svg>
                                         </a>
                                         <a
-                                            href="https://arvindkathare13.netlify.app/"
+                                            href="https://arvindkathare.netlify.app/"
                                             className="flex items-center justify-center px-4 py-2 rounded-full bg-amber-500 text-white hover:bg-amber-600 transition-colors"
                                         >
                                             <span className="mr-2">View Portfolio</span>
