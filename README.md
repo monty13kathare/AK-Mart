@@ -1,69 +1,50 @@
-# React + TypeScript + Vite
+# 🛒 AK Mart – E-commerce Frontend Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AK Mart is a modern e-commerce web application inspired by platforms like Meesho, Amazon, and Flipkart. It delivers a seamless shopping experience with a clean UI, fast performance, and efficient client-side data handling using localStorage.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://ak-mart-indol.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🛍️ Browse products with a clean and intuitive UI  
+- 🔍 Product listing and filtering experience  
+- 🛒 Add to cart functionality  
+- 💾 Persistent cart data using localStorage  
+- ⚡ Fast and responsive performance  
+- 📱 Fully responsive design (mobile + desktop)  
+- 🔄 Dynamic UI updates without page reload  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Frontend:** React, TailwindCss, Typescript 
+- **State Management:** Browser localStorage  
+- **Deployment:** Vercel  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🎯 Key Highlights
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Implemented a complete e-commerce flow using only frontend technologies  
+- Optimized user experience with real-time UI updates  
+- Leveraged localStorage for data persistence without backend dependency  
+- Designed scalable and reusable UI components  
+
+---
+
+## 📸 Screenshots
+
+_Add screenshots here to showcase UI (highly recommended for portfolio)_
+
+---
+
+## ⚙️ Installation & Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
